@@ -1,25 +1,8 @@
-name: 插件审核
-on:
-  pull_request:
-    paths:
-      - plugins.json
-      - plugins/**
-  push:
-    branches:
-      - main
-    paths:
-      - plugins.json
-
+name: validate
+on: pull_request
 jobs:
-  validate:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 验证 plugins.json
-        run: |
-          python3 -c "
-import json,sys
-with open('plugins.json') as f:
-    d=json.load(f)
-print('OK: %d plugins' % len(d.get('plugins',[])))
-"
+      - run: python3 -c "import json;d=json.load(open('plugins.json'));print('OK',len(d['plugins']))"
