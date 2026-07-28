@@ -11,7 +11,11 @@
       "author": "月下",
       "homepage": "https://github.com/yzdz666/yuexia-plugins",
       "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/quote.zip",
-      "tags": ["工具", "签到", "测试"],
+      "tags": [
+        "工具",
+        "签到",
+        "测试"
+      ],
       "minVersion": "1.0.0",
       "type": "function"
     },
@@ -24,7 +28,10 @@
       "author": "月下",
       "homepage": "https://github.com/yzdz666/yuexia-plugins",
       "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/music.zip",
-      "tags": ["音乐", "娱乐"],
+      "tags": [
+        "音乐",
+        "娱乐"
+      ],
       "minVersion": "1.0.0",
       "type": "entertainment"
     },
@@ -37,7 +44,10 @@
       "author": "月下",
       "homepage": "https://github.com/yzdz666/yuexia-plugins",
       "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/send-test.zip",
-      "tags": ["测试", "管理"],
+      "tags": [
+        "测试",
+        "管理"
+      ],
       "minVersion": "1.0.0",
       "type": "management"
     },
@@ -50,9 +60,22 @@
       "author": "月下",
       "homepage": "https://github.com/yzdz666/yuexia-plugins",
       "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/ark-card.zip",
-      "tags": ["卡片", "消息"],
+      "tags": [
+        "卡片",
+        "消息"
+      ],
       "minVersion": "1.0.0",
       "type": "function"
+    },
+    {
+      "id": "hello-world",
+      "name": "Hello World",
+      "version": "1.0.0",
+      "author": "Test",
+      "downloadUrl": "https://github.com/test/test/releases/v1.0.0/test.zip",
+      "tags": [
+        "demo"
+      ]
     }
   ]
 }
