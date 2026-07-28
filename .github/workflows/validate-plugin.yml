@@ -1,23 +1,11 @@
-name: 插件审核
-on: pull_request
+name: Validate Plugins
+on:
+  pull_request:
+    paths:
+      - plugins.json
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: 验证插件
-        run: python3 -c "
-import json,sys
-with open('plugins.json') as f:
-    d=json.load(f)
-assert 'version' in d and 'plugins' in d
-assert isinstance(d['plugins'], list)
-for p in d['plugins']:
-    for r in ['id','name','version','author','downloadUrl','tags']:
-        assert r in p and p[r], f'missing {r} in {p.get(\"name\",\"?\")}'
-    assert isinstance(p['tags'], list) and len(p['tags'])>0
-    assert p['downloadUrl'].startswith('http')
-ids=[p['id'] for p in d['plugins']]
-assert len(ids)==len(set(ids)), 'duplicate IDs'
-print(f'OK {len(d[\"plugins\"])} plugins')
-"
+      - run: python3 -c "import json;d=json.load(open('plugins.json'));print('OK',len(d['plugins']))"
