@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "updateTime": "2026-07-28T10:00:00Z",
+  "plugins": [
+    {
+      "id": "quote",
+      "name": "名言",
+      "title": "每日名言/全能测试",
+      "description": "包含每日签到、名言警句、撤回测试、按钮交互等全能测试功能",
+      "version": "1.0.0",
+      "author": "月下",
+      "homepage": "https://github.com/yzdz666/yuexia-plugins",
+      "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/quote.zip",
+      "tags": ["工具", "签到", "测试"],
+      "minVersion": "1.0.0",
+      "type": "function"
+    },
+    {
+      "id": "music",
+      "name": "音乐",
+      "title": "点歌系统",
+      "description": "支持搜索和播放音乐，包含歌词展示、音乐卡片等功能",
+      "version": "1.0.0",
+      "author": "月下",
+      "homepage": "https://github.com/yzdz666/yuexia-plugins",
+      "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/music.zip",
+      "tags": ["音乐", "娱乐"],
+      "minVersion": "1.0.0",
+      "type": "entertainment"
+    },
+    {
+      "id": "send-test",
+      "name": "发送测试",
+      "title": "消息发送测试",
+      "description": "管理员指令测试插件，支持文字/图片/Ark卡片等多种消息格式的发送测试",
+      "version": "1.0.0",
+      "author": "月下",
+      "homepage": "https://github.com/yzdz666/yuexia-plugins",
+      "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/send-test.zip",
+      "tags": ["测试", "管理"],
+      "minVersion": "1.0.0",
+      "type": "management"
+    },
+    {
+      "id": "ark-card",
+      "name": "Ark卡片",
+      "title": "Ark消息卡片",
+      "description": "生成精美的Ark消息卡片，支持自定义模板和内容布局",
+      "version": "1.0.0",
+      "author": "月下",
+      "homepage": "https://github.com/yzdz666/yuexia-plugins",
+      "downloadUrl": "https://github.com/yzdz666/yuexia-plugins/releases/download/v1.0.0/ark-card.zip",
+      "tags": ["卡片", "消息"],
+      "minVersion": "1.0.0",
+      "type": "function"
+    }
+  ]
+}
