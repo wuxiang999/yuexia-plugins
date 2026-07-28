@@ -1,0 +1,17 @@
+{
+  "name": "echo",
+  "title": "复读机",
+  "description": "让机器人复读你说的话",
+  "version": "1.0.0",
+  "author": "复读机开发组",
+  "main": "echo.php",
+  "license": "MIT",
+  "tags": [
+    "工具",
+    "娱乐"
+  ],
+  "category": "function",
+  "homepage": "https://github.com/example/echo",
+  "minVersion": "1.0.0",
+  "type": "function"
+}
