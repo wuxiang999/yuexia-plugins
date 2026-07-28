@@ -1,0 +1,73 @@
+name: 插件审核
+
+on:
+  pull_request:
+    paths:
+      - 'plugins.json'
+      - 'plugins/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 验证 plugins.json 格式
+        run: |
+          python3 -c "
+import json, sys
+with open('plugins.json') as f:
+    data = json.load(f)
+required = ['version', 'updateTime', 'plugins']
+for r in required:
+    assert r in data, f'缺少字段: {r}'
+assert isinstance(data['plugins'], list), 'plugins 必须是数组'
+print(f'plugins.json 格式正确, 共 {len(data[\"plugins\"])} 个插件')
+"
+
+      - name: 验证每个插件字段
+        run: |
+          python3 -c "
+import json
+with open('plugins.json') as f:
+    data = json.load(f)
+required_fields = ['id', 'name', 'version', 'author', 'downloadUrl', 'tags']
+for p in data['plugins']:
+    for rf in required_fields:
+        assert rf in p and p[rf], f'插件 {p.get(\"name\",\"?\")} 缺少字段: {rf}'
+    assert isinstance(p['tags'], list), f'{p[\"name\"]} tags 必须是数组'
+    assert len(p['tags']) > 0, f'{p[\"name\"]} 至少需要一个标签'
+    assert p['downloadUrl'].startswith('http'), f'{p[\"name\"]} downloadUrl 格式错误'
+print('所有插件字段验证通过')
+"
+
+      - name: 检查插件目录是否存在
+        run: |
+          python3 -c "
+import json, os
+with open('plugins.json') as f:
+    data = json.load(f)
+for p in data['plugins']:
+    plugin_dir = f'plugins/{p[\"id\"]}'
+    if not os.path.isdir(plugin_dir):
+        print(f'⚠️ 插件目录 {plugin_dir} 不存在（忽略，可能尚未创建）')
+        continue
+    manifest = f'{plugin_dir}/plugin.json'
+    if os.path.isfile(manifest):
+        with open(manifest) as mf:
+            mdata = json.load(mf)
+        assert mdata.get('name') == p['id'], f'{plugin_dir}/plugin.json name 不匹配'
+        print(f'✅ {p[\"name\"]} ({plugin_dir}) 验证通过')
+"
+
+      - name: 检查是否有重复 ID
+        run: |
+          python3 -c "
+import json
+with open('plugins.json') as f:
+    data = json.load(f)
+ids = [p['id'] for p in data['plugins']]
+dupes = set([x for x in ids if ids.count(x) > 1])
+assert len(dupes) == 0, f'发现重复的插件ID: {dupes}'
+print('无重复ID, 通过')
+"
