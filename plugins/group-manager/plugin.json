@@ -1,0 +1,20 @@
+{
+  "name": "group-manager",
+  "title": "群管助手",
+  "description": "QQ群管理辅助插件，包含入群欢迎、定时消息、关键词回复、群投票、签到打卡、黑名单管理、群统计等多项功能",
+  "version": "2.1.0",
+  "author": "群管开发组",
+  "main": "group-manager.php",
+  "license": "MIT",
+  "tags": [
+    "管理",
+    "群管",
+    "工具",
+    "签到",
+    "自动化"
+  ],
+  "category": "management",
+  "homepage": "https://github.com/example/group-manager",
+  "minVersion": "1.0.0",
+  "type": "function"
+}
