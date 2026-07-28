@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -c "import json;d=json.load(open('plugins.json'));print('OK',len(d['plugins']))"
+      - run: python3 -c "import json,sys;d=json.load(open('plugins.json'));[sys.exit(f'FAIL:{p[\"id\"]} missing {r}') for p in d['plugins'] for r in['id','name','version','author','downloadUrl','tags'] if r not in p or not p[r]];[sys.exit(f'FAIL:{p[\"id\"]} tags invalid') for p in d['plugins'] if not isinstance(p['tags'],list) or len(p['tags'])==0];[sys.exit(f'FAIL:{p[\"id\"]} bad url') for p in d['plugins'] if not p['downloadUrl'].startswith('http')];ids=[p['id'] for p in d['plugins']];assert len(ids)==len(set(ids)),f'FAIL:duplicate IDs';print(f'PASS:{len(d[\"plugins\"])} plugins')"
