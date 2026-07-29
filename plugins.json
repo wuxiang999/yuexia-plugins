@@ -80,6 +80,23 @@
       "homepage": "https://github.com/example/echo",
       "minVersion": "1.0.0",
       "type": "function"
+    },
+    {
+      "id": "daily-quote",
+      "name": "daily-quote",
+      "title": "每日一句",
+      "description": "每日一条精选名言语录，涵盖唐诗宋词、国学经典、人生感悟",
+      "version": "1.0.0",
+      "author": "wuxiang999",
+      "downloadUrl": "https://github.com/wuxiang999/yuexia-plugins/archive/main.zip",
+      "tags": [
+        "工具",
+        "语录",
+        "文化"
+      ],
+      "homepage": "https://github.com/wuxiang999/yuexia-plugins",
+      "minVersion": "1.0.0",
+      "type": "function"
     }
   ]
 }
