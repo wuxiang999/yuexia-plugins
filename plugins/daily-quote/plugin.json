@@ -1,0 +1,18 @@
+{
+  "name": "daily-quote",
+  "title": "每日一句",
+  "description": "每日一条精选名言语录，涵盖唐诗宋词、国学经典、人生感悟",
+  "version": "1.0.0",
+  "author": "wuxiang999",
+  "main": "daily-quote.php",
+  "license": "MIT",
+  "tags": [
+    "工具",
+    "语录",
+    "文化"
+  ],
+  "category": "function",
+  "homepage": "https://github.com/wuxiang999/yuexia-plugins",
+  "minVersion": "1.0.0",
+  "type": "function"
+}
