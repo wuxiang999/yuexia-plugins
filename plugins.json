@@ -86,7 +86,7 @@
       "name": "daily-quote",
       "title": "每日一句",
       "description": "每日一条精选名言语录，涵盖唐诗宋词、国学经典、人生感悟",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": "wuxiang999",
       "downloadUrl": "https://github.com/wuxiang999/yuexia-plugins/archive/main.zip",
       "tags": [
